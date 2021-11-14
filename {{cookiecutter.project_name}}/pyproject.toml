@@ -1,8 +1,7 @@
 [tool.poetry]
-name = "cookiecutter-greengrass-v2-component"
-version = "0.1.0"
-description = "Cookiecutter template for common greengrass V2 component"
-authors = ["Vladas Tamošaitis <amd.vladas@gmail.com>"]
+name = "{{cookiecutter.project_name}}"
+version = "{{cookiecutter.component_version}}"
+description = "{{cookiecutter.component_short_description}}"
 license = "MIT"
 
 [tool.poetry.dependencies]
