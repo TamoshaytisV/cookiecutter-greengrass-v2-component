@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "cookiecutter-greengrass-v2-component"
+version = "0.1.0"
+description = "Cookiecutter template for common greengrass V2 component"
+authors = ["Vladas Tamošaitis <amd.vladas@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+mypy = "*"
+pytest = "^6.*"
+pytest-cov = "^3.*"
+flakehell = {git="https://github.com/mcarans/flakehell.git"}
+pep8-naming = "*"
+flake8-builtins = "*"
+flake8-use-fstring = "*"
+flake8-docstrings = "*"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-s --cov-report xml:reports/coverage.xml --cov-report html:reports/html"
+testpaths = ["tests"]
+
+[tool.flakehell]
+max_line_length = 120
+show_source = true
+
+[tool.flakehell.plugins]
+pyflakes = ["+*"]
+pycodestyle = ["+*"]
+pep8-naming = ["+*"]
+flake8-docstrings = ["+*", "-D200"]
+"flake8-*" = ["+*"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

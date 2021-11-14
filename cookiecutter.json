@@ -1,0 +1,9 @@
+{
+    "project_name": "component-MyComponent",
+    "component_name": "com.example.MyComponent",
+    "component_version": "0.1.0",
+    "component_short_description": "",
+    "component_publisher": "MyOrg",
+    "component_entry_file_name": "main",
+    "s3_bucket_path": "s3://my-org-iot-components/components"
+}

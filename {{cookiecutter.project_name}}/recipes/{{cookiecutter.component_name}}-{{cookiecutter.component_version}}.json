@@ -1,0 +1,29 @@
+{
+  "RecipeFormatVersion": "2020-01-25",
+  "ComponentName": "{{cookiecutter.component_name}}",
+  "ComponentVersion": "{{cookiecutter.component_version}}",
+  "ComponentDescription": "{{cookiecutter.component_short_description}}",
+  "ComponentPublisher": "{{cookiecutter.component_publisher}}",
+  "ComponentConfiguration": {
+    "DefaultConfiguration": {
+
+    }
+  },
+  "Manifests": [
+    {
+      "Platform": {
+        "os": "linux"
+      },
+      "Lifecycle": {
+        "Install": "pip3 install -r {artifacts:decompressedPath}/artifacts/requirements.txt",
+        "Run": "python3 -u {artifacts:decompressedPath}/artifacts/{{cookiecutter.component_entry_file_name}}.py"
+      },
+      "Artifacts": [
+        {
+          "URI": "{{cookiecutter.s3_bucket_path}}/{{cookiecutter.component_name}}/{{cookiecutter.component_version}}/artifacts.zip",
+          "Unarchive": "ZIP"
+        }
+      ]
+    }
+  ]
+}
